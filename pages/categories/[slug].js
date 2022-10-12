@@ -31,7 +31,9 @@ export default function({category}){
                     <h4 className=' text-gray-500'>{category.subtitle}</h4>
                 </div>
                 {category.posts.map((post) => 
-                    <PostCard post={post} key={post.slug}/>
+                    function PostCard() {
+                        return (<PostCard post={post} key={post.slug}/>)
+                    }
                 )}
             </div>
             <Footer/>

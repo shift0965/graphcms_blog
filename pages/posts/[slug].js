@@ -1,6 +1,5 @@
 import {GraphQLClient} from 'graphql-request'
 
-import { useRouter } from 'next/router'
 
 
 import { getPostDetail, getSlugList } from '../../services'
@@ -32,10 +31,6 @@ export async function getStaticProps({params}){
 export default function article({post}) {
     //<Image src={post.coverPhoto.url} height='500' width='800'></Image>
 
-    const router = useRouter();
-    if(router.isFallback){
-      return <Loader/>
-    }
     
     return (
         <div className=''>

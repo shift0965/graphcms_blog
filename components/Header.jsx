@@ -67,7 +67,7 @@ export default function Header() {
                 <div className={`ml-auto flex nav_menu ${barOpen? "" : "active"} z-20`}>
                     <ul className='nav_list'>
                     {categories.map((category) =>
-                        <li className="nav_link" onClick={closeBar}>
+                        <li className="nav_link" onClick={closeBar} key={category.slug}>
                             <Link href={"/categories/"+category.slug} key={category.slug}>
                                 <h4 className='xing'>{category.name}</h4> 
                             </Link>
