@@ -6,7 +6,7 @@ export async function getStaticPaths(){
     console.log(categories)
     return{
         paths: categories.map((category) => ({ params : {slug: category.slug}})), 
-        fallback: true 
+        fallback: false
     }
 }
 
@@ -20,7 +20,7 @@ export async function getStaticProps({params}){
     }
 }
 
-export default function({category}){
+function page ({category}){
     console.log(category)
     return(
         <div className=''>
@@ -30,13 +30,13 @@ export default function({category}){
                     <h2 className=' xing italic mb-6'>“ {category.quote}”</h2>
                     <h4 className=' text-gray-500'>{category.subtitle}</h4>
                 </div>
-                {category.posts.map((post) => 
-                    function PostCard() {
-                        return (<PostCard post={post} key={post.slug}/>)
-                    }
-                )}
+                {category.posts.map((post) => (<PostCard post={post} key={post.slug}/>))
+                }
             </div>
             <Footer/>
       </div>
     )
 }
+
+page.displayName = "page"
+export default page

@@ -13,7 +13,7 @@ export async function getStaticPaths(){
     const posts = await getSlugList()
     return{
         paths: posts.map((post) => ({ params:{slug : post.slug}})),
-        fallback:true
+        fallback:false
     }
 }
 
