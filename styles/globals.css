@@ -1,26 +1,126 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
+
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+    @apply text-primary-sec
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.xing{
+    font-family: 'Noto Serif TC', serif;
 }
 
-* {
-  box-sizing: border-box;
+.codeLine{
+    @apply rounded-md bg-gray-100 px-1 py-1 mx-1
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.codeBlock{
+    @apply rounded-md bg-slate-100 px-2 py-1 border-2 border-slate-300
+}
+
+.code{
+    font-family: 'Fira Code', monospace;
+    @apply text-base text-slate-700
+}
+
+.link{
+    @apply text-blue-500 underline hover:text-blue-800 duration-300
+}
+.header{
+    @apply mx-auto max-w-5xl lg:px-24 md:px-12
+}
+.container{
+    @apply mx-auto max-w-5xl lg:px-24 md:px-12 px-6 border-b border-slate-200
+}
+
+h2{
+    @apply text-3xl
+}
+
+h3{
+    @apply text-2xl
+}
+
+h4{
+    @apply text-xl
+}
+
+h5{
+    @apply text-base
+}
+
+h6{
+    @apply opacity-50 text-base
+}
+
+p{
+    @apply text-lg text-gray-700 leading-loose
+}
+
+
+/* nav bar */
+.nav_toggle_bar{
+    @apply bg-primary-sec
+}
+.nav_toggle .nav_toggle_bar{
+    @apply block h-1 w-8 rounded-full absolute duration-300
+}
+.nav_toggle:hover .nav_toggle_bar{
+    @apply bg-primary-sec
+}
+
+.nav_toggle.active .nav_toggle_bar:nth-of-type(1){
+    @apply rotate-45 translate-y-1.5
+}
+.nav_toggle.active .nav_toggle_bar:nth-of-type(2){
+    @apply -rotate-45 -translate-y-1.5
+}
+  
+  /* min width */
+  
+  @media screen and (max-width: 760px){
+  
+    .nav_menu{
+      @apply fixed w-full bg-primary shadow-2xl shadow-black rounded-b-3xl top-0 pt-10 pb-5 px-6 duration-500 opacity-90
+    }
+  
+    .nav_menu.active{
+      @apply -top-96 opacity-0
+    }
+    
+    .nav_list{
+      @apply flex flex-col w-full
+    }
+  
+    .nav_link{
+      @apply flex items-center justify-center text-xl duration-300 w-full h-16 hover:text-secondary
+    }
+  
+    .nav_toggle{
+      @apply absolute right-0 top-0
+    }
   }
-  body {
-    color: white;
-    background: black;
+
+
+  /* normal screen */
+
+@media screen and (min-width: 760px){
+    .nav_menu{
+      @apply top-0 ml-auto
+    }
+  
+    .nav_list{
+      @apply flex ml-auto w-fit
+    }
+  
+    .nav_link{
+      @apply flex items-center hover:text-secondary duration-300 px-10 h-full w-full cursor-pointer
+    }
+  
+    .nav_toggle{
+      @apply absolute -right-20 opacity-0
+    } 
   }
-}
