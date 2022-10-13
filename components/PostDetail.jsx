@@ -73,7 +73,7 @@ export default function PostDetail({post}) {
         return <p key={index} className="mb-8">{objArr.children.map((obj, i) => getType(obj, i))}</p>;
       
       case 'code-block':
-        return <div key={index} className="mb-8 codeBlock code whitespace-pre">{objArr.children.map((obj, i) => getType(obj, i)) }  </div>;
+        return <div key={index} className="mb-8 codeBlock code whitespace-pre-wrap">{objArr.children.map((obj, i) => getType(obj, i)) }  </div>;
         
       case 'block-quote':
         return <div key={index} className="mb-6 border-l-4 pl-2 border-gray-800"><p>{objArr.children.map((obj, i) => getType(obj, i))}</p></div>
@@ -101,7 +101,6 @@ export default function PostDetail({post}) {
     }
   }
 
-  console.log(post.content.raw.children)
   return (
     <div className='w-full md:px-9 py-5'>
       <div className='text-center mb-9'> 
@@ -117,7 +116,7 @@ export default function PostDetail({post}) {
       </div>
 
 
-      <div className="relative overflow-hidden w-full aspect-video rounded-lg border-2">
+      <div className="relative overflow-hidden w-full aspect-video rounded-lg">
         <Image src={post.coverPhoto.url} 
                 layout='fill'
                 objectFit='cover'

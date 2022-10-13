@@ -3,7 +3,6 @@ import { getCategories, getCategoryDetail } from "../../services"
 
 export async function getStaticPaths(){
     const categories = await getCategories()
-    console.log(categories)
     return{
         paths: categories.map((category) => ({ params : {slug: category.slug}})), 
         fallback: false
@@ -12,7 +11,6 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
     const category = await getCategoryDetail(params.slug)
-    console.log(category)
     return{
         props:{
             category : category
@@ -21,7 +19,6 @@ export async function getStaticProps({params}){
 }
 
 function page ({category}){
-    console.log(category)
     return(
         <div className=''>
             <Header/>

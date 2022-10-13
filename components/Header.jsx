@@ -45,7 +45,7 @@ export default function Header() {
       }, []);
 
     return (
-        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'h-10' : 'h-14'} duration-300`}>
+        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'h-10 drop-shadow-sm' : 'h-14'} duration-300`}>
             <div className='header flex items-center h-full'>
                 <div className=''> 
                     <Link href="/">
