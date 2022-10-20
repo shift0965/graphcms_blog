@@ -133,10 +133,6 @@ export default function PostDetail({post}) {
       </div>
     </div>
   )
-
-
-
-  
 }
 
 

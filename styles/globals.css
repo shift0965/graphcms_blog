@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&family=Source+Code+Pro&display=swap');
 
 body{
     font-family: 'Noto Sans TC', sans-serif;
@@ -22,18 +22,18 @@ body{
 }
 
 .code{
-    font-family: 'Fira Code', monospace;
-    @apply text-base text-slate-700
+    font-family: 'Source Code Pro', monospace;
+    @apply text-base text-slate-700 break-all
 }
 
 .link{
     @apply text-blue-500 underline hover:text-blue-800 duration-300
 }
 .header{
-    @apply mx-auto max-w-5xl lg:px-24 md:px-12 px-4
+    @apply mx-auto max-w-5xl lg:px-24 md:px-12
 }
 .container{
-    @apply mx-auto max-w-5xl lg:px-24 md:px-12 px-6 border-b border-slate-200
+    @apply mx-auto max-w-5xl lg:px-24 md:px-12 px-4 border-b border-slate-200
 }
 
 h2{

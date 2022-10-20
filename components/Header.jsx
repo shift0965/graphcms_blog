@@ -45,11 +45,11 @@ export default function Header() {
       }, []);
 
     return (
-        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'md:h-12 h-16 md:drop-shadow-sm' : 'h-16'} duration-300`}>
+        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'h-12 md:drop-shadow-sm' : 'h-16'} duration-300`}>
             <div className='header flex items-center h-full'>
-                <div className=''> 
+                <div className='md:ml-0 ml-4'> 
                     <Link href="/">
-                        <div className=' w-40 h-8 relative cursor-pointer'>
+                        <div className=' w-36 h-7 relative cursor-pointer'>
                             <Image src='/logo.png'
                                     layout='fill'
                                     objectFit='cover'
