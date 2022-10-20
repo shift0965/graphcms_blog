@@ -14,7 +14,7 @@ export default function Footer() {
                 聯絡主廚<MdOutlineEmail className=' ml-2'/>
             </button>
 
-            <h6 className='mt-4 mb-2'>The website is built by Next.js and deployed by Vercel</h6>
+            <h6 className='mt-4 mb-2 mx-2 text-center'>The website is built by Next.js and deployed by Vercel</h6>
             <Link href='https://www.google.com'><h6 className=' cursor-pointer underline'>MoreAboutMe</h6></Link>
         </div>
     )

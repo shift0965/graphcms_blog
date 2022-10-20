@@ -102,7 +102,7 @@ export default function PostDetail({post}) {
   }
 
   return (
-    <div className='w-full md:px-9 py-5'>
+    <div className='w-full md:px-3 py-5'>
       <div className='text-center mb-9'> 
         <h2 className=' font-semibold mb-6'>{post.title}</h2>
 
