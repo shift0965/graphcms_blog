@@ -92,13 +92,15 @@ export default function PostDetail({post}) {
 
       case 'image':
         return (
-          <Image
-            key={index}
-            alt={objArr.title}
-            height={objArr.height}
-            width={objArr.width}
-            src={objArr.src}
-          />
+          <div className=' w-fit h-fit mb-8'>
+            <Image
+              key={index}
+              alt={objArr.title}
+              height={objArr.height}
+              width={objArr.width}
+              src={objArr.src}
+            />
+          </div>
         );
       default:
         return <div key={index} className=' text-red-500'>unregorized content</div>;
