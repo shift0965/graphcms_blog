@@ -24,7 +24,7 @@ export default function PostDetail({post}) {
     if(obj.text)
       return <p key={index}> {obj.text}</p>
     if(obj.href)
-      return <a key={index} href={obj.href} target="_blank" rel="noreferrer"> {obj.href}</a>
+      return <a key={index} href={obj.href} target="_blank" rel="noreferrer" className='link'> {obj.href}</a>
 
     return <p key={index}></p>
   }
@@ -134,7 +134,7 @@ export default function PostDetail({post}) {
         {post.content.raw.children.map((objArr, index) => 
         getObj(index, objArr)
         )}
-        
+
         <h6 className='mt-12'>{post.category.name}。更新於 {moment(post.date).format('YYYY-MM-DD')}</h6>
       </div>
     </div>
