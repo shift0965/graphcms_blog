@@ -24,7 +24,7 @@ export default function PostDetail({post}) {
     if(obj.text)
       return <p key={index}> {obj.text}</p>
     if(obj.href)
-      return <a key={index} href={obj.href} target="_blank" rel="noopener"> {obj.href}</a>
+      return <a key={index} href={obj.href} target="_blank" rel="noreferrer"> {obj.href}</a>
 
     return <p key={index}></p>
   }
