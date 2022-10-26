@@ -47,12 +47,15 @@ export default function Home({posts}) {
         </div>
 
         <div className="postsArea grid lg:grid-cols-12 md:grid-cols-8 grid-cols-4 gap-8">
-          {posts.slice(0,postsNum).map((post) => (
-            <BlogCard 
+          {posts.slice(0,postsNum).map((post) => {
+            if(!post.featurePost)
+            return(
+              <BlogCard 
               post = {post}
               key = {post.slug}
               />
-          ))}
+            )
+            })}
         </div>
 
         {(postsNum < posts.length)?

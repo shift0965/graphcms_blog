@@ -26,7 +26,7 @@ export default function FeaturePost({post}) {
                 </div>
 
                 <div className=" md:col-span-4 col-span-1 flex flex-col py-6">
-                    <h2 className='group-hover:opacity-70 duration-300 md:text-3xl text-2xl'>{post.title}</h2>
+                    <h3 className='group-hover:opacity-70 duration-300 md:text-3xl text-2xl'>{post.title}</h3>
                     <div className=' w-fit md:mt-auto mt-4 mb-4'>
                         {post.tags.map((tag) => 
                             <div className='px-3 py-1 bg-secondary-sec rounded-full' key={tag.slug}>
@@ -34,7 +34,7 @@ export default function FeaturePost({post}) {
                             </div>
                         )}
                     </div>
-                    <h4 className=''>{post.subtitle} </h4>
+                    <h5 className=''>{post.subtitle} </h5>
                 </div>
             </div>
         </Link>
