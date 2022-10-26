@@ -45,7 +45,7 @@ export default function Header() {
       }, []);
 
     return (
-        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'h-12 md:drop-shadow-sm' : 'h-16'} duration-300`}>
+        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'md:h-12 drop-shadow-sm' : 'md:h-16'}  h-14 duration-300`}>
             <div className='header flex items-center h-full'>
                 <div className='md:ml-0 ml-4'> 
                     <Link href="/">
@@ -66,13 +66,18 @@ export default function Header() {
 
                 <div className={`ml-auto flex nav_menu ${barOpen? "" : "active"} z-20`}>
                     <ul className='nav_list'>
+
+                    <li className="nav_link" onClick={closeBar}>
+                        <Link href={"/"}>
+                            <h4 className='xing'>首頁</h4> 
+                        </Link>
+                    </li> 
                     {categories.map((category) =>
                         <li className="nav_link" onClick={closeBar} key={category.slug}>
                             <Link href={"/categories/"+category.slug} key={category.slug}>
                                 <h4 className='xing'>{category.name}</h4> 
                             </Link>
                         </li> 
-                        
                     )}
                     </ul>
                 </div>

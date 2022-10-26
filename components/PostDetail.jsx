@@ -21,8 +21,12 @@ export default function PostDetail({post}) {
             return <ul key={index} className="mb-4 list-decimal text-lg  text-gray-800">{objArr.children.map((child, i) => getList(child, i))}</ul>  
       }
     }
+    if(obj.text)
+      return <p key={index}> {obj.text}</p>
+    if(obj.href)
+      return <a key={index} href={obj.href} target="_blank"> {obj.href}</a>
 
-    return <p key={index}> {obj.text}</p>
+    return <p key={index}></p>
   }
 
   const getType = (obj, i) => {
@@ -135,10 +139,3 @@ export default function PostDetail({post}) {
   )
 }
 
-
-/*
-{ post.content.raw.children.map((typeObj, index) => {
-          const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text))
-          return(getContentFragment(index, children, typeObj, typeObj.type))
-        })}
-      */

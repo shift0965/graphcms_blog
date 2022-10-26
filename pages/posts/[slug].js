@@ -29,8 +29,6 @@ export async function getStaticProps({params}){
 
 
 export default function article({post}) {
-    //<Image src={post.coverPhoto.url} height='500' width='800'></Image>
-
     
     return (
         <div className=''>
