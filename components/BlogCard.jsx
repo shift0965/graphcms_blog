@@ -20,7 +20,7 @@ export default function BlogCard({post}) {
 
                     <div className="textArea py-2">
                         {post.tags.map((tag) => <h6 key={tag.slug}>{tag.name}</h6>) || " "}
-                        <h4 className='my-1 group-hover:opacity-80 duration-300'>{post.title}</h4>
+                        <h4 className='my-1 group-hover:opacity-80 duration-300 font-b'>{post.title}</h4>
                     </div>
                 </div>
             </Link>
