@@ -22,11 +22,13 @@ function page ({category}){
     return(
         <div className=''>
             <Header/>
-            <div className='container pt-20 pb-10'>
-                <div className='text-center py-8 mb-10 border-b'>
+            <div className='container pt-20'>
+                <div className='text-center py-8'>
                     <h2 className=' xing italic mb-6'>“ {category.quote}”</h2>
                     <h4 className=' text-text dark:text-dark-text opacity-90'>{category.subtitle}</h4>
                 </div>
+            </div>
+            <div className="container pt-10 pb-10">
                 {category.posts.map((post) => (<PostCard post={post} key={post.slug}/>))
                 }
             </div>

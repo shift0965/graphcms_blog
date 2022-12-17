@@ -67,11 +67,11 @@ export default function PostDetail({post}) {
       case 'heading-three':
         return <h1 key={index} className="text-3xl font-semibold mb-6 mt-10">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
       case 'heading-four':
-        return <h1 key={index} className="text-2xl font-semibold mb-4 mt-8">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
+        return <h1 key={index} className="text-2xl font-semibold mb-4 mt-10">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
       case 'heading-five':
-        return <h1 key={index} className="text-xl font-semibold mb-4 mt-8">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
+        return <h1 key={index} className="text-xl font-semibold mb-4 mt-10">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
       case 'heading-six':
-        return <h1 key={index} className="text-lg font-semibold mb-4 mt-8">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
+        return <h1 key={index} className="text-lg font-semibold mb-4 mt-10">{objArr.children.map((obj, i) => getType(obj, i))}</h1>;
       
       case 'paragraph':
         return <p key={index} className="mb-8">{objArr.children.map((obj, i) => getType(obj, i))}</p>;
