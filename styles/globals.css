@@ -6,7 +6,11 @@
 
 body{
     font-family: 'Noto Sans TC', sans-serif;
-    @apply text-primary-sec
+    @apply text-primary-sec dark:text-primary bg-primary dark:bg-dark-primary duration-300
+}
+
+.darkLight{
+  @apply w-10 h-10 text-xl flex justify-center items-center rounded-full
 }
 
 .xing{
@@ -14,16 +18,16 @@ body{
 }
 
 .codeLine{
-    @apply rounded-md bg-gray-100 px-1 py-1 mx-1
+    @apply rounded-md bg-gray-100 dark:bg-gray-800 px-1 py-1 mx-1
 }
 
 .codeBlock{
-    @apply rounded-md bg-slate-100 px-2 py-1 border-2 border-slate-300
+    @apply rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 border-2 border-slate-300 dark:border-slate-600
 }
 
 .code{
     font-family: 'Source Code Pro', monospace;
-    @apply text-base text-slate-700 break-all
+    @apply text-base text-slate-700 dark:text-slate-200 break-all
 }
 
 .link{
@@ -33,7 +37,7 @@ body{
     @apply mx-auto max-w-5xl lg:px-24 md:px-12
 }
 .container{
-    @apply mx-auto max-w-5xl lg:px-24 md:px-12 px-4 border-b border-slate-200
+    @apply mx-auto max-w-5xl lg:px-24 md:px-12 px-4 border-b border-light dark:border-dark-light
 }
 
 h2{
@@ -53,27 +57,24 @@ h5{
 }
 
 h6{
-    @apply opacity-50 text-base
+    @apply opacity-60 text-base
 }
 
 p{
-    @apply text-lg text-gray-700 leading-loose
+    @apply text-lg text-text dark:text-dark-text leading-loose
 }
 
 .link{
-    @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600 leading-loose 
+    @apply text-blue-600 hover:underline leading-loose no-underline
 }
 
 
 /* nav bar */
 .nav_toggle_bar{
-    @apply bg-primary-sec
+    @apply bg-primary-sec dark:bg-dark-primary-sec
 }
 .nav_toggle .nav_toggle_bar{
     @apply block h-1 w-8 rounded-full absolute duration-300
-}
-.nav_toggle:hover .nav_toggle_bar{
-    @apply bg-primary-sec
 }
 
 .nav_toggle.active .nav_toggle_bar:nth-of-type(1){
@@ -88,7 +89,7 @@ p{
   @media screen and (max-width: 760px){
   
     .nav_menu{
-      @apply fixed w-full bg-primary shadow-2xl shadow-black rounded-b-3xl top-0 pt-10 pb-5 px-6 duration-500 opacity-90
+      @apply fixed w-full bg-primary dark:bg-primary-sec shadow-2xl shadow-black rounded-b-3xl top-0 pt-10 pb-5 px-6 duration-500 opacity-90
     }
   
     .nav_menu.active{
@@ -121,7 +122,7 @@ p{
     }
   
     .nav_link{
-      @apply flex items-center hover:text-secondary duration-300 px-10 h-full w-full cursor-pointer
+      @apply flex items-center hover:text-secondary hover:dark:text-dark-secondary duration-300 px-10 h-full w-full cursor-pointer
     }
   
     .nav_toggle{

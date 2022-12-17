@@ -16,9 +16,9 @@ export default function PostDetail({post}) {
         case 'list-item-child':
           return <div key={index}>{obj.children.map((child, childIndex) => getList(child, childIndex))}</div>
         case 'bulleted-list':
-          return <ul key={index} className="ml-4 list-disc text-lg text-gray-800">{obj.children.map((child, i) => getList(child, i))}</ul>   
+          return <ul key={index} className="ml-4 list-disc text-lg text-gray-800 dark:text-gray-200">{obj.children.map((child, i) => getList(child, i))}</ul>   
         case 'bulleted-list':
-            return <ul key={index} className="mb-4 list-decimal text-lg  text-gray-800">{objArr.children.map((child, i) => getList(child, i))}</ul>  
+            return <ul key={index} className="mb-4 list-decimal text-lg  text-gray-800 dark:text-gray-200">{objArr.children.map((child, i) => getList(child, i))}</ul>  
       }
     }
     if(obj.text)
@@ -80,13 +80,13 @@ export default function PostDetail({post}) {
         return <div key={index} className="mb-8 codeBlock code whitespace-pre-wrap">{objArr.children.map((obj, i) => getType(obj, i)) }  </div>;
         
       case 'block-quote':
-        return <div key={index} className="mb-6 border-l-4 pl-2 border-gray-800"><p>{objArr.children.map((obj, i) => getType(obj, i))}</p></div>
+        return <div key={index} className="mb-6 border-l-4 pl-2 border-gray-800 dark:border-gray-200"><p>{objArr.children.map((obj, i) => getType(obj, i))}</p></div>
 
       case 'bulleted-list':
-        return <ul key={index} className="mb-6 list-disc text-lg text-gray-800">{objArr.children.map((child, i) => getList(child, i))}</ul>
+        return <ul key={index} className="mb-6 list-disc text-lg text-gray-800 dark:text-gray-200">{objArr.children.map((child, i) => getList(child, i))}</ul>
 
       case 'numbered-list':
-        return <ul key={index} className="mb-6 list-decimal text-lg  text-gray-800">{objArr.children.map((child, i) => getList(child, i))}</ul>
+        return <ul key={index} className="mb-6 list-decimal text-lg  text-gray-800 dark:text-gray-200">{objArr.children.map((child, i) => getList(child, i))}</ul>
 
         
 
@@ -114,7 +114,7 @@ export default function PostDetail({post}) {
 
         <div className="tags flex justify-center">
           {post.tags.map((tag) => 
-            <div className='px-3 py-1 bg-orange-100 rounded-full' key={tag.slug}>
+            <div className='px-3 py-1 bg-secondary-sec dark:bg-dark-secondary-sec rounded-full' key={tag.slug}>
               {tag.name}
             </div>
           )}

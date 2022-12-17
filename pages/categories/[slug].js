@@ -25,7 +25,7 @@ function page ({category}){
             <div className='container pt-20 pb-10'>
                 <div className='text-center py-8 mb-10 border-b'>
                     <h2 className=' xing italic mb-6'>“ {category.quote}”</h2>
-                    <h4 className=' text-gray-500'>{category.subtitle}</h4>
+                    <h4 className=' text-text dark:text-dark-text opacity-90'>{category.subtitle}</h4>
                 </div>
                 {category.posts.map((post) => (<PostCard post={post} key={post.slug}/>))
                 }

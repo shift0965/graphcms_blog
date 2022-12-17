@@ -4,10 +4,58 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 import { getCategories } from '../services';
+import { useTheme } from 'next-themes';
+import { BsSunFill, BsMoonFill } from 'react-icons/bs'
 
 
 
 export default function Header() {
+    const [mounted, setMounted] = useState(false);
+    const {systemTheme, theme, setTheme} = useTheme()
+
+    useEffect(() => {
+        setMounted(true);
+    }, [])
+
+    const renderThemeChanger = () => {
+        if(!mounted) return null;
+
+        const currentTheme = (theme === 'system') ? systemTheme : theme;
+
+        if(currentTheme === "dark"){
+            return(
+                <div className='darkLight' onClick={() => {setTheme('light')}}>
+                    <BsSunFill/>
+                </div>
+            )
+        }
+        else {
+            return(
+            <div className='darkLight' onClick={() => {setTheme('dark')}}>
+                <BsMoonFill/>
+            </div>)
+        }  
+    }
+
+    const logoImage = () => {
+        const currentTheme = (theme === 'system') ? systemTheme : theme;
+        if(currentTheme === "dark"){
+            return(
+                <Image src='/logo-white.png'
+                    layout='fill'
+                    objectFit='cover'
+                    >
+                </Image>
+            )
+        }
+        else return(
+            <Image src='/logo-black.png'
+                    layout='fill'
+                    objectFit='cover'
+                    >
+                </Image>
+            )
+    }
 
     const [categories, setCategories] = new useState([]);
     const [barOpen, setBarOpen] = new useState(false);
@@ -29,7 +77,7 @@ export default function Header() {
       
 
     const [animateHeader, setAnimateHeader] = useState(false);
-
+    
 
 
     useEffect(() => {
@@ -45,16 +93,12 @@ export default function Header() {
       }, []);
 
     return (
-        <div className={`w-full fixed z-50 bg-primary ${(animateHeader)? 'md:h-12 drop-shadow-sm' : 'md:h-16'}  h-14 duration-300`}>
+        <div className={`w-full fixed z-50 bg-primary dark:bg-dark-primary ${(animateHeader)? 'md:h-12 drop-shadow-sm' : 'md:h-16'}  h-14 duration-300`}>
             <div className='header flex items-center h-full'>
                 <div className='md:ml-0 ml-4'> 
                     <Link href="/">
                         <div className=' w-36 h-7 relative cursor-pointer'>
-                            <Image src='/logo.png'
-                                    layout='fill'
-                                    objectFit='cover'
-                                    >
-                            </Image>
+                            {logoImage()}
                         </div>
                     </Link>
                 </div>
@@ -81,6 +125,8 @@ export default function Header() {
                     )}
                     </ul>
                 </div>
+
+                {renderThemeChanger()}
             </div>
         </div>
     )

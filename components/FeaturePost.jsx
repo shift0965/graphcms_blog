@@ -29,7 +29,7 @@ export default function FeaturePost({post}) {
                     <h3 className='group-hover:opacity-70 duration-300 md:text-3xl text-2xl'>{post.title}</h3>
                     <div className=' w-fit md:mt-auto mt-4 mb-4'>
                         {post.tags.map((tag) => 
-                            <div className='px-3 py-1 bg-secondary-sec rounded-full' key={tag.slug}>
+                            <div className='px-3 py-1 bg-secondary-sec dark:bg-dark-secondary-sec rounded-full' key={tag.slug}>
                                 <h5>{tag.name}</h5>
                             </div>
                         )}

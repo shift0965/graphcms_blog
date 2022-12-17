@@ -18,7 +18,7 @@ export async function getStaticProps(){
 
 export default function Home({posts}) {
 
-  const [postsNum, setPostsNum] = useState(3);
+  const [postsNum, setPostsNum] = useState(4);
 
   const readMorePosts = () => {
     setPostsNum(postsNum + 3);
@@ -32,12 +32,13 @@ export default function Home({posts}) {
       <Header/>
       <div className='container pt-20 pb-10'>
         <Head>
-          <title>Blog</title>
-          <meta name="description" content="This is My blog" />
-          <link rel="icon" href="/favicon.ico" />
+          <title>WannaEAT想吃軟飯</title>
+          <meta name="description" content="最特別的軟飯食譜，歡迎光臨想吃軟飯部落格！" />
+          <link rel="icon" href="/icon.png" />
+          <meta property="og:image" content="https://wannaeat.vercel.app/cover.png"></meta>
         </Head>
 
-        <div className='mb-16'> 
+        <div className='mb-14'> 
           {posts.map((post) => {
             if(post.featurePost)
             return(
@@ -60,7 +61,7 @@ export default function Home({posts}) {
 
         {(postsNum < posts.length)?
           <div className='py-10 w-full flex justify-center items-center'>
-            <button className=' md:px-32 px-20 py-1 rounded-full shadow-gray-300 shadow-lg hover:shadow-md duration-300' onClick={() => readMorePosts()}><h5 className='xing'>想看更多</h5></button>
+            <button className=' md:px-32 px-20 py-1 rounded-full shadow-light dark:shadow-dark-light shadow-lg hover:shadow-md duration-300' onClick={() => readMorePosts()}><h5 className='xing'>想看更多</h5></button>
           </div>:
           <></>
         }
